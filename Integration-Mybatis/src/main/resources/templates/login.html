@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>用户登录</title>
+	<!-- Custom Theme files -->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<!-- Custom Theme files -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="order by dede58.com"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="order by dede58.com"/>
+	<meta name="keywords" content="后台登录" />
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!--header start here-->
+	<div class="login-form">
+	<div class="top-login">
+		<span><img src="images/group.png" alt=""/></span>
+	</div>
+	<h1>登录</h1>
+	<div class="login-top">
+	<form action="/login" method="post">
+		<div class="login-ic">
+			<i ></i>
+		<input id="uanme" name="name" type="text"  value="用户" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'User name';}"/>
+		<div class="clear"> </div>
+		</div>
+		<p style="color: #FF3366" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+		<div class="login-ic">
+		<i class="icon"></i>
+		<input id="upass" name="password" type="password"  value="密码" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'password';}"/>
+		<div class="clear"> </div>
+		</div>
+
+		<div class="log-bwn">
+		<input type="submit" value="Login" onclick="fnLogin()">
+		</div>
+	</form>
+	</div>
+		<p class="copy">© 2020版权所有</p>
+	</div>
+	<!--header start here-->
+</body>
+
+</html>

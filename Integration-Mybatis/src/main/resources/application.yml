@@ -1,0 +1,6 @@
+#激活配置指定配置文件
+spring:
+  profiles:
+    active: dev
+
+
