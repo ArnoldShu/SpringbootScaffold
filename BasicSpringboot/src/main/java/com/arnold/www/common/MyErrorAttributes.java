@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * @ClassName MyGlobalExceptionHandler
- * @Description: TODO
+ * @Description: 自定义错误数据属性
  * @Author Arnold
  * @Date 2020/4/18
  * @Version V2.0

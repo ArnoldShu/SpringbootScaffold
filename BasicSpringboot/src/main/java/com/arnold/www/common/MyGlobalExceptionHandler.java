@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * @ClassName MyGlobalExceptionHandler
- * @Description: TODO
+ * @Description: 全局错误处理器
  * @Author Arnold
  * @Date 2020/4/18
  * @Version V2.0
