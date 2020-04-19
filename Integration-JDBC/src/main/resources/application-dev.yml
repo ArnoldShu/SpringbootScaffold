@@ -1,0 +1,22 @@
+#端口配置
+server:
+  port: 8080
+#日志输出文件
+#logging:
+#  file:
+#    name: my.log
+
+#thyleaf配置
+spring:
+  thymeleaf:
+    cache: false
+  #添加数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Sh19940929
+    url: jdbc:mysql://159.138.20.29:7336/Arnold?useSSL=false
+
+
+
+
