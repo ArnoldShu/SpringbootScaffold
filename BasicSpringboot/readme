@@ -1,0 +1,69 @@
+父类加载公共依赖
+<!--公共springboot依赖-->
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.6.RELEASE</version>
+</parent>
+
+HelloWorld 中加载web依赖
+ <dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+</dependencies>
+
+starter启动器依赖，不同类别盗用其他的
+
+可以用springInitialzr构建springboot
+
+springboot日志SLF4j和logback
+//日志记录器
+Logger logger = LoggerFactory.getLogger(getClass());
+日志级别trace<debug<info<warn<error
+可以调整输出级别，日志只会在这个级别以后的更高级别生效
+springboot默认info级别
+logging.file 输出日志到指定文件名
+logging.path 输出日志到指定路径,默认用spring.log做文件名
+logging.pattern.console 控制台日志格式
+logging.pattern.file 文件日志格式
+
+切换logback日志系统 只需要在类路径加上logback.xml(配置有点问题需要处理)
+还可以使用logback-spring.xml解锁高级日志技能
+
+单元测试添加依赖
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+</dependency>
+并且test的报名一定要和你测试启动类在同一个包下面不然报错
+
+springboot对静态资源的规则
+所有/webjars/**,去classpath:/META-INF/resources/webjars/找资源，以jar包导入静态资源
+/** 访问项目的任何资源 去 classpath:/META-INF/resources/,/resource/,/static/,/public/获取静态资源
+/index.html
+所有的**/favicon.ico都是在静态资源文件下找
+
+添加魔板渲染引擎
+spring-boot-starter-thymeleaf
+
+config配置
+继承相应的configuration类，运用@configuration即可实现自定义配置
+
+国际化配置，详情百度
+
+登陆器拦截器简单实现
+mvn配置拦截器,以及相关的配置文件记得要添加
+
+自定义错误页面,
+返回界面可以直接在模版引擎下面error文件下定义相应的错误代码的html界面
+
+自定义错误数据
+可以用ControllerAdvice来做全局异常处理
+实现客户端与浏览器自动却分页面还是数据,直接转发到/error界面即可(新版本可能有改动)
