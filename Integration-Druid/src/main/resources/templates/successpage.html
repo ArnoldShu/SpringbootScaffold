@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<h1>登陆成功</h1>
+<div th:text="${session.name}"></div>
+<div th:text="${session.password}"></div>
+</body>
+</html>
