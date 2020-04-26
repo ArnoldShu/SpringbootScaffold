@@ -1,0 +1,24 @@
+父类加载公共依赖
+添加rabbitmq依赖
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-amqp</artifactId>
+    <version>2.2.6.RELEASE</version>
+</dependency>
+
+安装好rabbitmq
+
+添加配置application.yml文件
+ rabbitmq:
+    host: 159.138.20.29
+    port: 5672
+    username: guest
+    password: guest
+
+自定义rabbitmq的配置 自定义序列化器
+
+监听机制
+spring的rabbit的监听注解(启动类配置监听注解@EnableRabbit,@RabbitListener(queues={"testmq"}))
+
+amqpAdmin 可以动态测试绑定一些队列以及配置
+
