@@ -22,6 +22,8 @@
 
 
 添加一个自定义配置 RedisConfig
+配置cacheManager
+配置redisTemplate
 
 操作类 RedisService
 
