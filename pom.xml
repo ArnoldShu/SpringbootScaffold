@@ -9,10 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>BasicSpringboot</module>
-        <module>Integration-JDBC</module>
-        <module>Integration-Druid</module>
-        <module>Integration-Mybatis</module>
+        <module>1_BasicSpringboot</module>
+        <module>2_Integration-JDBC</module>
+        <module>3_Integration-Druid</module>
+        <module>4_Integration-Mybatis</module>
+        <module>5_Integration-Redis</module>
+        <module>6_Integration-RabbitMQ</module>
+        <module>7_Integration-Swagger</module>
     </modules>
 
     <!--公共springboot依赖-->
@@ -79,6 +82,18 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
                 <version>2.2.6.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.9.2</version>
             </dependency>
 
         </dependencies>
