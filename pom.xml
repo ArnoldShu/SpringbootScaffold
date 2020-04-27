@@ -16,6 +16,7 @@
         <module>5_Integration-Redis</module>
         <module>6_Integration-RabbitMQ</module>
         <module>7_Integration-Swagger</module>
+        <module>8_Integration-Logback</module>
     </modules>
 
     <!--公共springboot依赖-->
