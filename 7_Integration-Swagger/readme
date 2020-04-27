@@ -1,0 +1,28 @@
+父类加载公共依赖
+添加swagger依赖
+ <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
+
+配置@Configuration启动
+@EnableSwagger2
+
+新增一个SaggerConfig
+
+修改mvnconfig 中的拦截器以及资源处理器添加相关的排除配置
+
+在相应的controller添加swagger的注解使其生效
+常用注解
+@Api(tags = "登陆")
+@ApiModel(value = "com.arnold.www.pojo.User",description = "用户实体")
+@ApiModelProperty(value = "用户主键")
+
