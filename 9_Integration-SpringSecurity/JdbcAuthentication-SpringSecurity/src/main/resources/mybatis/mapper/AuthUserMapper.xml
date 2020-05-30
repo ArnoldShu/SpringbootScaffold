@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.arnold.www.dao.AuthUserMapper">
+    <select id="getUserByParam" resultType="com.arnold.www.pojo.UserDto">
+        SELECT * FROM t_user where 1=1
+        <if test="null!=id and id!=''">
+            AND id = #{id}
+        </if>
+        <if test="null!=username and username!=''">
+            AND username = #{username}
+        </if>
+        <if test="null!=password and password!=''">
+            AND password = #{password}
+        </if>
+        <if test="null!=fullname and fullname!=''">
+            AND fullname = #{fullname}
+        </if>
+        <if test="null!=mobile and mobile!=''">
+            AND mobile = #{mobile}
+        </if>
+    </select>
+
+    <select id="findPermissionsByUserId" resultType="String" parameterType="String">
+        SELECT
+            code
+        FROM
+            t_permission
+        WHERE
+            id IN
+            ( SELECT permission_id FROM t_role_permission WHERE role_id
+            IN ( SELECT role_id FROM t_user_role WHERE user_id = #{id} ) )
+    </select>
+
+    <insert id="add"  parameterType="com.arnold.www.pojo.UserDto">
+       insert  into t_user(username,password,fullname,mobile)
+        values (#{username},#{password},#{fullname},#{mobile})
+    </insert>
+
+</mapper>
