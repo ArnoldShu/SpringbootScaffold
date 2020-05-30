@@ -1,0 +1,7 @@
+#端口配置
+server:
+  port: 9090
+#日志输出文件
+#logging:
+#  file:
+#    name: my.log
