@@ -17,6 +17,7 @@
         <module>6_Integration-RabbitMQ</module>
         <module>7_Integration-Swagger</module>
         <module>8_Integration-Logback</module>
+        <module>9_Integration-SpringSecurity</module>
     </modules>
 
     <!--公共springboot依赖-->
