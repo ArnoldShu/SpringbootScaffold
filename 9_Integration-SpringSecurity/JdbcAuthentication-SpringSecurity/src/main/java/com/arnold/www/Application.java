@@ -13,7 +13,8 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
  * @Version V2.0
  **/
 @SpringBootApplication
-@MapperScan(value = "com.arnold.www.dao")public class Application {
+@MapperScan(basePackages = {"com.arnold.www.dao"})
+public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

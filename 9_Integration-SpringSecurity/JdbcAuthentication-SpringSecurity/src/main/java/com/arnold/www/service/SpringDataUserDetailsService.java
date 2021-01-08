@@ -27,7 +27,8 @@ public class SpringDataUserDetailsService implements UserDetailsService {
         //将来连接数据库根据账号查询用户信息
         UserDto userDto = new UserDto();
         userDto.setUsername(username);
-        UserDto resultUserDto = authUserMapper.getUserByParam(userDto).get(0);
+        List<UserDto> resultUserDtoList = authUserMapper.getUserByParam(userDto);
+        UserDto resultUserDto = resultUserDtoList.get(0);
         if(userDto == null){
             //如果用户查不到，返回null，由provider来抛出异常
             return null;

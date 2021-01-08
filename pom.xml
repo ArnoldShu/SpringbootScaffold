@@ -18,6 +18,7 @@
         <module>7_Integration-Swagger</module>
         <module>8_Integration-Logback</module>
         <module>9_Integration-SpringSecurity</module>
+        <module>10_Integration-MybatisPlus</module>
     </modules>
 
     <!--公共springboot依赖-->
@@ -97,7 +98,17 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>2.9.2</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.3.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator -->
+            <!--<dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>3.3.2</version>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 </project>

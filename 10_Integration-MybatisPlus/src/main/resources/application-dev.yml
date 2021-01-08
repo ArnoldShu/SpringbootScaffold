@@ -1,21 +1,13 @@
 #端口配置
 server:
   port: 8080
-#日志输出文件
-#logging:
-#  file:
-#    name: my.log
 
-#thyleaf配置
 spring:
-  thymeleaf:
-    cache: false
-  #添加数据源配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: root
-    url: jdbc:mysql://192.168.2.251:3306/web?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    password: Sh19940929
+    url: jdbc:mysql://159.138.20.29:7336/Arnold?useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     # 初始化连接池个数
     initialSize: 5
@@ -52,8 +44,27 @@ spring:
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
 
-
-#mybatis配置文件
-mybatis:
-  config-location: classpath:mybatis/mybatis-config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.arnold.www.pojo
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: UUID
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      # field-strategy: NOT_NULL
+    banner: false
+  #原生配置
+  configuration:
+    #驼峰
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #当查询数据为空时字段返回为null，不加这个查询数据为空时，字段将被隐藏
+    call-setters-on-nulls: true
+    #插入空值时报错
+    jdbc-type-for-null: 'null'
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
