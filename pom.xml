@@ -19,6 +19,7 @@
         <module>8_Integration-Logback</module>
         <module>9_Integration-SpringSecurity</module>
         <module>10_Integration-MybatisPlus</module>
+        <module>11_Integration-Starter</module>
     </modules>
 
     <!--公共springboot依赖-->

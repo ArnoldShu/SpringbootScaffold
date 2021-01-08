@@ -1,0 +1,12 @@
+#端口配置
+server:
+  port: 8080
+#日志输出文件
+#logging:
+#  file:
+#    name: my.log
+
+#thyleaf配置
+spring:
+  thymeleaf:
+    cache: false
