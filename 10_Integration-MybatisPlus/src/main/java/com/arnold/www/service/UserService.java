@@ -1,7 +1,5 @@
 package com.arnold.www.service;
 
-import com.arnold.www.pojo.User;
-
 /**
  * @author Arnold
  * @version V1.0

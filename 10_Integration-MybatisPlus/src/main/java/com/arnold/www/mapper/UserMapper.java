@@ -10,6 +10,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @description TODO
  * @date 2020/6/1
  **/
-public interface UserMapper  BaseMapper<User> {
+public interface UserMapper extends BaseMapper<User> {
 
 }
